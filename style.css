@@ -1,0 +1,445 @@
+/* Reset básico para eliminar márgenes y paddings predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1C1C1C;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #E13541;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #f39c12;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Logo en el header */
+nav ul li:first-child {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li:first-child a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f39c12;
+}
+
+/* Main Content */
+main {
+    padding: 100px 20px 20px; /* Padding superior para compensar el header fijo */
+}
+
+/* Sección de Hero o Banner */
+.fondobonito {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-container {
+    display: flex;
+    width: 100%; /* Tres imágenes, cada una ocupa el 100% */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Activar la primera imagen */
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* Sección "Quienes somos" */
+#somos {
+    background-color: #fff;
+    padding: 60px 20px;
+    margin-bottom: 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#somos h1, #somos h2, #somos h3 {
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+#somos p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+}
+
+#somos ol {
+    margin: 20px 0;
+    padding-left: 20px;
+    list-style: decimal;
+}
+
+#somos .imagen_del_negocio {
+    height: 400px;
+    margin: 30px 0;
+    border-radius: 10px;
+    background: url('/imagenes/concecionaria.jpg') no-repeat center center;
+}
+/* Estilo general para el contenedor de tarjetas */
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px;
+}
+
+/* Estilo base para cada tarjeta */
+.card {
+    width: 250px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Imagen de perfil en la tarjeta */
+.card .imagen_johan,
+.card .imagen_jhon,
+.card .imagen_luis,
+.card .imagen_daniel {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    background-color: #ccc; /* Color de fondo mientras no se carga la imagen */
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+/* Colores específicos para cada imagen */
+.imagen_johan {
+    background-image: url('./imagenes/istockphoto-1191193172-612x612.jpg'); /* Cambia la ruta por la correcta */
+}
+
+.imagen_jhon {
+    background-image: url('./imagenes/vista-frontal-mitad-cuerpo-modelo-masculino-negro-extremadamente-guapo-vestido-como-instructor-yoga_1078199-1448.avif');
+}
+
+.imagen_luis {
+    background-image: url('./imagenes/istockphoto-1200677760-612x612.jpg');
+}
+
+.imagen_daniel {
+    background-image: url('./imagenes/istockphoto-1096419400-612x612.jpg');
+}
+
+/* Nombre y cargo en la tarjeta */
+.card p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.card p:first-of-type {
+    font-weight: bold;
+    color: #000;
+}
+
+.card p:last-of-type {
+    font-style: italic;
+    color: #666;
+}
+
+/* Hover para la tarjeta */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+}
+/* Sección de Productos */
+/* Contenedor general de productos */
+#Productos {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+}
+
+#Productos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Estilo de cada grupo de productos (Deportivas, Urbanas, Todoterreno) */
+.Motos_deportivas, .urbanas, .todoterreno {
+    display: flex;
+    justify-content: space-between; /* Ajustamos el espacio entre tarjetas */
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+/* Estilos de las tarjetas de producto */
+.card {
+    width: 280px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px; /* Añadimos margen inferior para separar las tarjetas */
+}
+
+/* Imagen de la moto */
+.card .imagen_moto1, .card .imagen_moto2, .card .imagen_moto3,
+.card .imagen_moto4, .card .imagen_moto5, .card .imagen_moto6,
+.card .imagen_moto7, .card .imagen_moto8, .card .imagen_moto9 {
+    width: 100%;
+    height: 180px;
+    background-color: #ccc; /* Fondo gris mientras no se carga la imagen */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Especificar las imágenes de cada moto */
+.imagen_moto1 { background-image: url('./imagenes/motos/MT15-grayred-color_1200x1.webp'); }
+.imagen_moto2 { background-image: url('./imagenes/motos/OIP2.jpg'); }
+.imagen_moto3 { background-image: url('./imagenes/motos/r7-carb-filing3.jpg'); }
+.imagen_moto4 { background-image: url('./imagenes/motos/R4.png'); }
+.imagen_moto5 { background-image: url('./imagenes/motos/R5.jpg'); }
+.imagen_moto6 { background-image: url('./imagenes/motos/OIP6.jpg'); }
+.imagen_moto7 { background-image: url('./imagenes/motos/2g7.jpg'); }
+.imagen_moto8 { background-image: url('./imagenes/motos/yamaha_TW-200-597be1c35f9b58928bda8bf38.jpg'); }
+.imagen_moto9 { background-image: url('./imagenes/motos/OIP10.jpg'); }
+
+/* Título y precio de la moto */
+.card h3 {
+    margin: 10px 0;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.card p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* Hover en las tarjetas */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+#Servicios {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.imagensoat, .imagenpiezas, .imagentecnico {
+    width: 30%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación para hover */
+}
+
+.imagensoat:hover, .imagenpiezas:hover, .imagentecnico:hover {
+    transform: scale(1.05); /* Agranda ligeramente el elemento al pasar el cursor */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Agrega sombra al pasar el cursor */
+}
+
+/* Efecto hover para cambiar el fondo oscuro */
+.imagensoat:hover::before, .imagenpiezas:hover::before, .imagentecnico:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Filtro oscuro en hover */
+    z-index: 1;
+}
+
+.imagensoat, .imagenpiezas, .imagentecnico div {
+    position: relative;
+    z-index: 2; /* Asegura que el texto esté por encima del filtro oscuro */
+}
+
+.imagensoat {
+    background-image: url('./imagenes/soat.png');
+}
+
+.imagenpiezas {
+    background-image: url('./imagenes/moto-tuning.jpg');
+}
+
+.imagentecnico {
+    background-image: url('./imagenes/funciones-mecanico-motos.jpg.webp');
+}
+/* Footer */
+#comunicacion_redes {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #333;
+}
+
+.enlace-redes {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    transition: transform 0.3s ease; /* Animación al hacer hover */
+}
+
+.enlace-redes:hover {
+    transform: scale(1.1); /* Agranda la imagen al hacer hover */
+}
+
+.facebook, .youtube, .tiktok, .instagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Tamaño del contenedor del ícono */
+    height: 50px;
+}
+
+.facebook img, .youtube img, .tiktok img, .instagram img {
+    width: 100%; /* La imagen ocupará todo el contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea circular */
+    transition: background-color 0.3s ease;
+}
+
+/* Cambia el color de fondo del contenedor en hover */
+.facebook:hover img {
+    background-color: #3b5998;
+}
+
+.youtube:hover img {
+    background-color: #ff0000;
+}
+
+.tiktok:hover img {
+    background-color: #000000;
+}
+
+.instagram:hover img {
+    background-color: #e4405f;
+}
+
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Motos_deportivas, .urbanas, .todoterreno {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column;
+    }
+
+    footer div {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+}
