@@ -155,7 +155,7 @@ main {
     height: 400px;
     margin: 30px 0;
     border-radius: 10px;
-    background: url('/imagenes/concecionaria.jpg') no-repeat center center;
+    background: url('./imagenes/concecionaria.jpg') no-repeat center center;
 }
 /* Estilo general para el contenedor de tarjetas */
 .team-container {
